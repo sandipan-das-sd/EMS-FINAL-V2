@@ -11,6 +11,7 @@ import Payslips from "./pages/Payslips"
 import Settings from "./pages/Settings"
 import Login from "./pages/Login"
 import PrintPayslip from "./pages/PrintPaySlips"
+import LoginForm from "./components/LoginForm"
 
 export default function App() {
   return (
@@ -18,6 +19,14 @@ export default function App() {
     <Toaster />
     <Routes>
       <Route path="/login" element={<Login />} />
+<Route path="/login/admin" element={<LoginForm role="admin" 
+title="Admin Portal" subtitle="Sign in to manage the organization"
+  
+/>} />
+<Route path="/login/employee" element={<LoginForm role="employee"
+
+title="Employee Portal" subtitle="Sign in to view your dashboard"
+/>} />
       <Route element={<Layout />}>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/employees" element={<Employees />} />
